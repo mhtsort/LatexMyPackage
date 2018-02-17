@@ -1,0 +1,143 @@
+% tikzpic.tex
+\documentclass[crop,border=0.5pt]{standalone}% 'crop' is the default for v1.0, before it was 'preview'
+\usepackage{testpackage}
+\setromanfont{Fira Sans}
+\setmainfont{Fira Sans}
+\everymath\expandafter{\the\everymath\rm}
+\everydisplay\expandafter{\the\everydisplay\rm}
+%\usetikzlibrary{...}% tikz package already loaded by 'tikz' option
+\usepackage{tikz,pgfplots}
+\usepackage{array}
+
+\begin{document}
+
+
+
+\begin{tabular}{ |p{0.7\textwidth} | m{0.3\textwidth}| }
+	\hline
+	ΣΥΝΑΡΤΗΣΗ	& 				ΓΡΑΦΙΚΗ ΠΑΡΑΣΤΑΣΗ 
+	\\ \hline  \hline
+		$g(x) \, = \,1 - \frac{1}{2} \; x^{2}$
+			&
+		\begin{tikzpicture}[scale=0.6]
+		\begin{axis}[
+		samples=500,
+		domain=-2*pi:2*pi,
+		restrict y to domain =-2:4,
+		axis x line=center,
+		axis y line=center,
+		xtick={
+			-6.28318, -4.7123889, -3.14159, -1.5708,
+			1.5708, 3.14159, 4.7123889, 6.28318
+		},
+		xticklabels={
+			$-2π$, $-\dfrac{3π}{2}$, $-π$, $-\dfrac{π}{2}$,
+			$\dfrac{π}{2}$, $π$, $\dfrac{3π}{2}$, $2π$
+		}
+		]
+		\addplot[very thick,black!50,dashed ]plot (\x, {cos(\x r)});
+		\addplot[black] plot(\x,{1-1/2*(\x)^2});
+		\end{axis}
+		\end{tikzpicture}
+	\\ \hline
+	$g(x) \, = \,1 - \frac{1}{2} \; x^{2} + \frac{1}{24} \; x^{4}$
+	&
+		\begin{tikzpicture}[scale=0.6]
+		\begin{axis}[
+		samples=500,
+		domain=-2*pi:2*pi,
+		restrict y to domain =-2:4,
+		axis x line=center,
+		axis y line=center,
+		xtick={
+			-6.28318, -4.7123889, -3.14159, -1.5708,
+			1.5708, 3.14159, 4.7123889, 6.28318
+		},
+		xticklabels={
+			$-2π$, $-\dfrac{3π}{2}$, $-π$, $-\dfrac{π}{2}$,
+			$\dfrac{π}{2}$, $π$, $\dfrac{3π}{2}$, $2π$
+		}
+		]
+		\addplot[very thick,black!50,dashed ]plot (\x, {cos(\x r)});
+		\addplot[black] plot(\x,{1-1/2*(\x)^2+1/24*(\x)^4});
+		\end{axis}
+		\end{tikzpicture}
+	\\ \hline
+
+	$g(x) \, = \,1 - \frac{1}{2} \; x^{2} + \frac{1}{24} \; x^{4} - \frac{1}{720} \; x^{6}$
+		&
+		\begin{tikzpicture}[scale=0.6]
+		\begin{axis}[
+		samples=500,
+		domain=-2*pi:2*pi,
+		restrict y to domain =-2:4,
+		axis x line=center,
+		axis y line=center,
+		xtick={
+			-6.28318, -4.7123889, -3.14159, -1.5708,
+			1.5708, 3.14159, 4.7123889, 6.28318
+		},
+		xticklabels={
+			$-2π$, $-\dfrac{3π}{2}$, $-π$, $-\dfrac{π}{2}$,
+			$\dfrac{π}{2}$, $π$, $\dfrac{3π}{2}$, $2π$
+		}
+		]
+		\addplot[very thick,black!50,dashed ]plot (\x, {cos(\x r)});
+		\addplot[black] plot(\x,{1-1/2*(\x)^2+1/24*(\x)^4-1/720*(\x)^6});
+		\end{axis}
+		\end{tikzpicture}
+		
+	
+	\\ \hline
+		$g(x) \, = \,1 - \frac{1}{2} \; x^{2} + \frac{1}{24} \; x^{4} - \frac{1}{720} \; x^{6} + \frac{1}{40329} \; x^{8} $
+		&				\begin{tikzpicture}[scale=0.5]
+		\begin{axis}[
+		samples=500,
+		domain=-2*pi:2*pi,
+		restrict y to domain =-2:4,
+		axis x line=center,
+		axis y line=center,
+		xtick={
+			-6.28318, -4.7123889, -3.14159, -1.5708,
+			1.5708, 3.14159, 4.7123889, 6.28318
+		},
+		xticklabels={
+			$-2π$, $-\dfrac{3π}{2}$, $-π$, $-\dfrac{π}{2}$,
+			$\dfrac{π}{2}$, $π$, $\dfrac{3π}{2}$, $2π$
+		}
+		]
+		\addplot[very thick,black!50,dashed ]plot (\x, {cos(\x r)});
+		\addplot[black] plot(\x,{1-1/2*(\x)^2+1/24*(\x)^4-1/720*(\x)^6+1/40329*(\x)^8});
+		\end{axis}
+		\end{tikzpicture} \\ \hline
+	
+	
+	
+	$g(x) \, = \,1 - \frac{1}{2} \; x^{2} + \frac{1}{24} \; x^{4} - \frac{1}{720} \; x^{6} + \frac{1}{40329} \; x^{8} - \frac{1}{3628800} \; x^{10}$ 
+	& 	
+	\begin{tikzpicture}[scale=0.5]
+	\begin{axis}[
+	samples=200,
+	domain=-2*pi:2*pi,
+	restrict y to domain =-2:4,
+	axis x line=center,
+	axis y line=center,
+	xtick={
+		-6.28318, -4.7123889, -3.14159, -1.5708,
+		1.5708, 3.14159, 4.7123889, 6.28318
+	},
+	xticklabels={
+		$-2π$, $-\dfrac{3π}{2}$, $-π$, $-\dfrac{π}{2}$,
+		$\dfrac{π}{2}$, $π$, $\dfrac{3π}{2}$, $2π$
+	}
+	]
+	\addplot[very thick,black!50,dashed ]plot (\x, {cos(\x r)});
+	\addplot[black] plot(\x,{1-1/2*(\x)^2+1/24*(\x)^4-1/720*(\x)^6+1/40329*(\x)^8-1/3628800*(\x)^10});
+	\end{axis}
+	\end{tikzpicture}  \\ \hline
+	\end{tabular}
+
+
+
+
+\end{document}

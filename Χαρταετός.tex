@@ -1,0 +1,196 @@
+\documentclass[11pt]{article}
+
+\usepackage[
+%	top=20mm,
+%	bottom=20mm,
+%	left=20mm,
+%	right=20mm,
+%	includehead
+a4paper,
+%scale={0.8,0.5},
+%includeheadfoot,
+includefoot,
+ignoremp,
+%ignorefoot,
+layouthoffset=0pt,
+top=3.5cm,
+bottom=1.25cm,
+footskip=1.25cm,
+headsep=2cm,
+scale=0.7,ignorehead,
+headheight=21pt
+%showframe
+]{geometry}
+\usepackage{array}
+\usepackage{graphicx}
+\usepackage{color}
+
+%\includegraphics[height=3cm]{example-image.pdf}%
+
+\usepackage{testpackage}
+\usepackage{pgfplots}
+\setromanfont{Fira Sans}
+\setmainfont{Fira Sans}
+\everymath\expandafter{\the\everymath\rm}
+\everydisplay\expandafter{\the\everydisplay\rm}
+\pagestyle{fancy}
+\fancyheadoffset[]{50pt}
+\lhead{\rule{\linewidth}{2pt}\\ \hspace{1cm} }
+% \lhead{Δημήτρης Τσορτανίδης}
+\chead{ΔΗΜΗΤΡΗΣ ΤΣΟΡΤΑΝΙΔΗΣ ΜΑΘΗΜΑΤΙΚΟΣ MSc}
+\rhead{2/2018}
+%\setlength{\textwidth}{0.6\paperwidth} 
+
+\usepackage{xgreek}
+\usepackage{setspace}
+\usepackage{pdfpages}
+\renewcommand{\baselinestretch}{1.5} 
+\usepackage{multicol}% \setlength{\columnsep}{1cm}
+\usepackage[export]{adjustbox}%Βάζει το πάνω μέρος της εικόνας στην αρχή της λίστας
+%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\usepackage{showframe}
+%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{endnotes}
+					\renewcommand{\makeenmark}{\textbf{\theenmark. }}
+					\renewcommand{\notesname}{Απαντήσεις \hrule}
+					\newcommand{\solution}[1]{\endnotetext[\value{enumi}]{#1}}
+\begin{document}
+
+\begin{center}
+\huge{ΧΑΡΤΑΕΤΟΣ }
+
+\end{center}
+\rule{\textwidth}{2pt}
+
+\section*{Εισαγωγή}
+Μέρες που είναι ασδφ
+\begin{center}
+\begin{tikzpicture}[thick]
+\node[above left] at (0,0) {O};
+\node[above] at (0,2) {A};
+\node[left] at (-2,0) {B};
+\node[below] at (0,-3){Γ};
+\node[right] at (2,0) {Δ};
+\coordinate(A) at (0,2);
+\coordinate(B) at (-2,0) ;
+\coordinate (C) at (0,-3);
+\coordinate (D) at (2,0);
+\draw[||-||] (3,2)--(3,-3) node[midway,xshift=10,rotate=0,below]{$y$};
+\draw[||-||] (-2,-4)--(2,-4) node[midway,below]{$x$};
+\draw (A)--(C);
+\draw (B)--(D);
+\draw (A)--(D)node[midway,xshift=10]{$α$};\draw (A)--(B) node[midway,xshift=-10]{$α$};\draw (B)--(C)node[midway,xshift=-10]{$β$};\draw (C)--(D)node[midway,xshift=10]{$β$};
+\draw (0,0.2)--(0.2,0.2)--(0.2,0);
+\end{tikzpicture}
+\end{center}
+\section*{Διατύπωση του προβλήματος}
+\begin{minipage}[b]{0.6\textwidth}Έστω ένας χαρταετός και $x$ και $y$ τα μήκη των διαγωνίων του. Αν είναι γνωστή η περίμετρος του χαρταετού, ποια είναι τα μήκη των διαγωνίων ώστε το εμβαδόν του να είναι μέγιστο;\end{minipage}
+\begin{minipage}[m]{0.4\textwidth}\flushright
+	\begin{tikzpicture}[baseline=(current bounding box.west),thick,scale=0.8]
+	\node[above left] at (0,0) {O};
+	\node[above] at (0,2) {A};
+	\node[left] at (-2,0) {B};
+	\node[below] at (0,-3){Γ};
+	\node[right] at (2,0) {Δ};
+	\coordinate(A) at (0,2);
+	\coordinate(B) at (-2,0) ;
+	\coordinate (C) at (0,-3);
+	\coordinate (D) at (2,0);
+	\draw[||-||] (3,2)--(3,-3) node[midway,xshift=10,rotate=0,below]{$y$};
+	\draw[||-||] (-2,-4)--(2,-4) node[midway,below]{$x$};
+	\draw (A)--(C);
+	\draw (B)--(D);
+	\draw (A)--(D)node[midway,xshift=10]{$α$};\draw (A)--(B) node[midway,xshift=-10]{$α$};\draw (B)--(C)node[midway,xshift=-10]{$β$};\draw (C)--(D)node[midway,xshift=10]{$β$};
+	\draw (0,0.2)--(0.2,0.2)--(0.2,0);
+	\end{tikzpicture}
+\end{minipage} 
+\section*{Λύση}
+Το εμβαδον του χαρταετού δίνεται από το γνωστό τύπο 
+\[Ε=\dfrac{1}{2}\cdot x\cdot y\]
+
+H $AΓ$ είναι μεσοκάθετος της $ΒΔ$ οπότε το τρίγωνο $ΑΟΒ$ είναι ορθογώνιο. Aπό το Πυθαγόρειο θεώρημα \[ΑΟ^2+ΒΟ^2=ΑΒ^2\implies AO^2=AB^2-BO^2\implies AO=\sqrt{AB^2-BO^2}=\sqrt{α^2-\left(\dfrac{x}{2}\right)^2 }\] 
+Όμοια στο τρίγωνο $ΒΟΓ$ \[OΓ=\sqrt{β^2-\left(\dfrac{x}{2}\right)^2 }\]
+Από τα παραπάνω προκύπτει ότι η δεύτερη διαγώνιος είναι  \[y=AΟ+ΟΓ=\sqrt{α^2-\left(\dfrac{x}{2}\right)^2 }+\sqrt{β^2-\left(\dfrac{x}{2}\right)^2 }\]
+Το εμβαδόν του χαρταετού μπορεί να εκφραστεί πλέον ως συνάρτηση του μήκους $x$ της διαγωνίου $ΒΔ$:
+\[Ε(x)=\dfrac{1}{2}x\left(
+\sqrt{α^2-\left(\dfrac{x}{2}\right)^2 }+\sqrt{β^2-\left(\dfrac{x}{2}\right)^2 }
+\right)\]
+με $x<min(2α,2β)$, λόγω τριγωνικής ανισότητας.\\
+H $E(x)$ είναι παραγωγίσιμη με 
+\begin{equation*} 
+\begin{split}
+Ε'(x) & =\dfrac{1}{2}\left(
+\sqrt{α^2-\left(\dfrac{x}{2}\right)^2 }+\sqrt{β^2-\left(\dfrac{x}{2}\right)^2 }
+\right)+\dfrac{1}{2}x\left(\dfrac{-x}{2\sqrt{α^2-\left(\dfrac{x}{2}\right)^2 }}+\dfrac{-x}{2\sqrt{β^2-\left(\dfrac{x}{2}\right)^2 }}\right) \\
+& = 
+\dfrac{1}{2}\left(
+\sqrt{α^2-\left(\dfrac{x}{2}\right)^2 }+\sqrt{β^2-\left(\dfrac{x}{2}\right)^2 }
+\right)
+-\dfrac{1}{2}x^2
+\dfrac{\sqrt{β^2-\left(\dfrac{x}{2}\right)^2 }+\sqrt{α^2-\left(\dfrac{x}{2}\right)^2 }}
+{2\sqrt{α^2-\left(\dfrac{x}{2}\right)^2 }\cdot\sqrt{β^2-\left(\dfrac{x}{2}\right)^2 }} \\
+& =\dfrac{1}{2}\left(
+\sqrt{α^2-\left(\dfrac{x}{2}\right)^2 }+\sqrt{β^2-\left(\dfrac{x}{2}\right)^2 }
+\right)\cdot
+\left(
+1-\dfrac{x^2}{4\sqrt{α^2-\left(\dfrac{x}{2}\right)^2}\cdot\sqrt{β^2-\left(\dfrac{x}{2}\right)^2 }}
+\right)\\
+&=\dfrac{1}{2}\left(
+\sqrt{α^2-\left(\dfrac{x}{2}\right)^2 }+\sqrt{β^2-\left(\dfrac{x}{2}\right)^2 }
+\right)\cdot
+\left(
+\dfrac{4\sqrt{α^2-\left(\dfrac{x}{2}\right)^2}\cdot\sqrt{β^2-\left(\dfrac{x}{2}\right)^2 }-x^2}{4\sqrt{α^2-\left(\dfrac{x}{2}\right)^2}\cdot\sqrt{β^2-\left(\dfrac{x}{2}\right)^2 }}
+\right)\\
+&=\dfrac{1}{2}\dfrac{
+\sqrt{α^2-\left(\dfrac{x}{2}\right)^2 }+\sqrt{β^2-\left(\dfrac{x}{2}\right)^2 }
+}{\sqrt{α^2-\left(\dfrac{x}{2}\right)^2}\cdot\sqrt{β^2-\left(\dfrac{x}{2}\right)^2 }}\cdot
+\left(
+\sqrt{α^2-\left(\dfrac{x}{2}\right)^2}\cdot\sqrt{β^2-\left(\dfrac{x}{2}\right)^2 }-\left(\dfrac{x}{2}\right)^2
+\right)
+\end{split}
+\end{equation*}
+Από την παραπάνω $$\dfrac{1}{2}\dfrac{
+	\sqrt{α^2-\left(\dfrac{x}{2}\right)^2 }+\sqrt{β^2-\left(\dfrac{x}{2}\right)^2 }
+}{\sqrt{α^2-\left(\dfrac{x}{2}\right)^2}\cdot\sqrt{β^2-\left(\dfrac{x}{2}\right)^2 }}>0$$
+και για $0<x<min(2α,2β)$
+\begin{equation*} 
+\begin{split}
+Ε'(x)=0\iff\sqrt{α^2-\left(\dfrac{x}{2}\right)^2}\cdot\sqrt{β^2-\left(\dfrac{x}{2}\right)^2 }-\left(\dfrac{x}{2}\right)^2&=0\iff\\
+\sqrt{α^2-\left(\dfrac{x}{2}\right)^2}\cdot\sqrt{β^2-\left(\dfrac{x}{2}\right)^2 }&=\left(\dfrac{x}{2}\right)^2\iff\\
+\left(α^2-\left(\dfrac{x}{2}\right)^2\right)\cdot\left(β^2-\left(\dfrac{x}{2}\right)^2\right)&=\left(\dfrac{x}{2}\right)^4\iff\\
+\left(\dfrac{x}{2}\right)^4-\left(α^2+β^2\right)\left(\dfrac{x}{2}\right)^2+α^2β^2&=\left(\dfrac{x}{2}\right)^4\iff\\
+\left(α^2+β^2\right)\left(\dfrac{x}{2}\right)^2&=α^2β^2\iff\\
+\left(\dfrac{x}{2}\right)^2&=\dfrac{α^2β^2}{α^2+β^2}\overset{x>0}{\iff}\\
+x&=2\sqrt{\dfrac{α^2β^2}{α^2+β^2}}=\dfrac{2αβ}{\sqrt{α^2+β^2}}
+\end{split}
+\end{equation*} 
+Η λύση είναι δεκτή\footnote{Αν $α<β$ ισχύει: ${β^2<α^2+β^2\iff β<\sqrt{α^2+β^2}\iff \frac{β}{\sqrt{α^2+β^2}}<1\iff\dfrac{2αβ}{\sqrt{α^2+β^2}}<2α}$,\\ ομοίως αν $β<α$}.
+\\Όμοια $Ε'(x)>0\iff 0<x<\dfrac{2αβ}{\sqrt{α^2+β^2}}$.
+\begin{center}
+	\begin{tikzpicture}
+	\draw (0,4) rectangle (5,6);
+	\draw (0,3) rectangle (5,4);
+	\draw (2,3)--(2,6);
+	\draw(0,4)--(5,4);
+	\draw(0,5)--(5,5);
+	\draw(3.5,3)--(3.5,5) node[above]{\scriptsize$\frac{2αβ}{\sqrt{α^2+β^2}}$};
+	\node[above right,xshift=-4] at (2,5){\small$0$};
+	\node[above left,xshift=31] at (5,5){\scriptsize$min(2α,2β)$};
+	\node at (1,4.5){$E'(x)$};\node at (2.75,4.5){+};\node at (4.25,4.5){--};\node at (3.5,4.5){0};\node at (3.5,2.7){\scriptsize max};
+	\node at (1,3.5){$E(x)$};\node at (2.75,3.5){$\nearrow$};\node at (4.25,3.5){$\searrow$};
+	\node [above]at (0.5,5){$x$};
+	\end{tikzpicture}
+\end{center}
+\[\begin{split}
+y&=\sqrt{α^2-\left(\dfrac{x}{2}\right)^2 }+\sqrt{β^2-\left(\dfrac{x}{2}\right)^2 }=
+\sqrt{α^2-\left(\dfrac{2αβ}{2\sqrt{α^2+β^2}}\right)^2}+\sqrt{β^2-\left(\dfrac{2αβ}{2\sqrt{α^2+β^2}}\right)^2}\\&=
+\sqrt{α^2-\dfrac{α^2β^2}{α^2+β^2}}+\sqrt{β^2-\dfrac{α^2β^2}{α^2+β^2}}=
+\sqrt{\dfrac{α^4+α^2β^2-α^2β^2}{α^2+β^2}}+\sqrt{\dfrac{β^4+α^2β^2-α^2β^2}{α^2+β^2}}\\&=
+\dfrac{α^2}{\sqrt{α^2+β^2}}+\dfrac{β^2}{\sqrt{α^2+β^2}}=\dfrac{α^2+β^2}{\sqrt{α^2+β^2}}=\sqrt{α^2+β^2}
+\end{split}
+\]
+Οπότε οι διαγώνιοι πρέπει να έχουν μήκη:\textbf{\begin{itemize}
+	\item $\mathbf{x=\dfrac{2αβ}{\sqrt{α^2+β^2}}}$
+	\item $\mathbf{y=\sqrt{α^2+β^2}}$
+\end{itemize}}
+\end{document}

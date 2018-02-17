@@ -1,0 +1,70 @@
+\documentclass[12pt,a4paper,notitlepage]{article}
+%\usepackage[top=20mm, bottom=20mm, left=20mm, right=40mm,showframe]{geometry}
+\usepackage{testpackage}
+\setromanfont{Fira Sans}
+\setmainfont{Fira Sans}
+\setlength{\marginparsep}{10pt}
+\setlength{\marginparwidth}{20pt} 
+\setlength{\textwidth}{0.9\paperwidth} 
+\setlength{\hoffset}{-60pt} 
+\everymath\expandafter{\the\everymath\rm}
+\everydisplay\expandafter{\the\everydisplay\rm}
+
+\usepackage{amsfonts}   % if you want the fonts
+\renewcommand{\mathbb}[1]{I\!#1}
+
+
+\pagestyle{fancy}
+%\setlength{\headheight}{90.0pt} % Μέγεθος του header
+\fancyhf{} % sets both header and footer to nothing
+\renewcommand{\headrulewidth}{1pt}% Eξαφανίζει την πάνω γραμμή
+\cfoot{
+\begin{tikzpicture}[x=1pt,y=1pt,scale=1]
+\draw (0,0) rectangle (540,11) ;
+\draw (440,0)--(440,11);
+	\node at(220,5)[scale=0.9,xshift=0,yshift=0,align=center]
+	{\footnotesize{\textbf{TA ΘΕΜΑΤΑ ΠΡΟΟΡΙΖΟΝΤΑΙ ΓΙΑ ΑΠΟΚΛΕΙΣΤΙΚΗ ΧΡΗΣΗ ΤΗΣ ΦΡΟΝΤΙΣΤΗΡΙΑΚΗΣ ΜΟΝΑΔΑΣ}
+	}};
+	\node at(490,5)[scale=0.9,xshift=0,yshift=0,align=center]
+	{\footnotesize{\textbf{ΣΕΛΙΔΑ \thepage ΑΠΟ \pageref{LastPage}}
+		}};
+\end{tikzpicture}
+ 	}%
+\lhead{\rule{\linewidth}{1pt}\\ \hspace{1cm} }
+% \lhead{Δημήτρης Τσορτανίδης}
+ \chead{Επαναληπτικα Θέματα}
+ \rhead{\thepage}
+\pagecolor{white}
+\begin{document}
+		\section{ΘΕΜΑ Α}
+		\begin{enumerate}[label=\textbf{\color{magenta}\thesection\greekalpha*)}]
+			\item Να αποδείξετε ότι η συνάρτηση $f(x)=x^α$, $α\in\mathbb{R-Z}$ έχει παράγωγο $f'(x)=α x^{α-1}$. \monades{9}
+			
+			\item Να διατυπώσετε το θεώρημα Μέγιστης-Ελάχιστης τιμής.\monades{5}
+			
+			\item Να χαρακτηρίσετε την παρακάτω πρόταση ως αληθή ή ψευδή, αιτιολογώντας την απάντησή σας:
+			
+			\begin{quote}
+				\textit{"Αν μία συνάρτηση είναι συνεχής, τότε είναι κατ'ανάγκη και παραγωγίσιμη."}  
+			\end{quote}
+			\strut \hfill \textbf{Μονάδες 3}
+			
+			\item Να χαρακτηρίσετε τις παρακάτω προτάσεις ως Αληθείς ή Ψευδείς:	\marginpar{\tiny \textbf{Δοκιμή $\int f(x) \:dx$}}
+			\begin{enumerate}[label=\greekalpha*)]
+				\item $(α^x)'=x α^{x-1}$
+				
+				\item	$(ln|x|)'=\dfrac{1}{x}$
+				
+				\item Αν οι συναρτήσεις $f,g$ έχουν όριο στο $x_0$ και ισχύει $f(x)< g(x)$ κοντά στο $x_0$, τότε $\lim\limits_{x\to x_0}f(x)<\lim\limits_{x\to x_0}g(x)$
+				
+				\item Αν η συνάρτηση $f$ δεν έχει ρίζες στο διάστημα Δ, τότε διατηρεί πρόσημο στο Δ.\monades{8}
+			\end{enumerate}
+			
+		\end{enumerate}
+	
+	\section{\color{mybluecolour} TEST}
+		\color{mybluecolour} 
+	fadsfasdfasdf
+	
+abcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyz
+\end{document}

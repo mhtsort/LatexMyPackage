@@ -57,34 +57,38 @@ headheight=21pt
 \begin{document}
 
 \begin{center}
-\huge{ΧΑΡΤΑΕΤΟΣ }
+\huge{ΧΑΡΤΑΕΤΟΙ}\\
+{\LARGE Μέρος πρώτο}
 
 \end{center}
 \rule{\textwidth}{2pt}
 
 \section*{Εισαγωγή}
-Μέρες που είναι ασδφ
-\begin{center}
-\begin{tikzpicture}[thick]
-\node[above left] at (0,0) {O};
-\node[above] at (0,2) {A};
-\node[left] at (-2,0) {B};
-\node[below] at (0,-3){Γ};
-\node[right] at (2,0) {Δ};
-\coordinate(A) at (0,2);
-\coordinate(B) at (-2,0) ;
-\coordinate (C) at (0,-3);
-\coordinate (D) at (2,0);
-\draw[||-||] (3,2)--(3,-3) node[midway,xshift=10,rotate=0,below]{$y$};
-\draw[||-||] (-2,-4)--(2,-4) node[midway,below]{$x$};
-\draw (A)--(C);
-\draw (B)--(D);
-\draw (A)--(D)node[midway,xshift=10]{$α$};\draw (A)--(B) node[midway,xshift=-10]{$α$};\draw (B)--(C)node[midway,xshift=-10]{$β$};\draw (C)--(D)node[midway,xshift=10]{$β$};
-\draw (0,0.2)--(0.2,0.2)--(0.2,0);
-\end{tikzpicture}
-\end{center}
+Ένα πρόβλημα που δημιουργήθηκε επάνω στο τραπέζι της Τσικνοπέμπτης.
+\begin{quotation}\begin{emph}
+	"Ποιες είναι οι διαστάσεις που θα πρέπει να έχει ένας χαρταετός;"\end{emph}
+\end{quotation}  Η περίπτωση του παραδοσιακού εξάγωνου χαρταετού δε δίνει και πολλές επιλογές. Το ερώτημα είναι τι γίνεται στην περίπτωση ενός τετράπλευρου χαρταετού. H δύναμη της άνωσης είναι ανάλογη του εμβαδού του χαρταετού, οπότε όσο μεγαλύτερο είναι το εμβαδόν τόσο ευκολότερη η πτήση του \footnote{https://www.grc.nasa.gov/www/k-12/airplane/kitelift.html}. 
+%\begin{center}
+%\begin{tikzpicture}[thick]
+%\node[above left] at (0,0) {O};
+%\node[above] at (0,2) {A};
+%\node[left] at (-2,0) {B};
+%\node[below] at (0,-3){Γ};
+%\node[right] at (2,0) {Δ};
+%\coordinate(A) at (0,2);
+%\coordinate(B) at (-2,0) ;
+%\coordinate (C) at (0,-3);
+%\coordinate (D) at (2,0);
+%\draw[||-||] (3,2)--(3,-3) node[midway,xshift=10,rotate=0,below]{$y$};
+%\draw[||-||] (-2,-4)--(2,-4) node[midway,below]{$x$};
+%\draw (A)--(C);
+%\draw (B)--(D);
+%\draw (A)--(D)node[midway,xshift=10]{$α$};\draw (A)--(B) node[midway,xshift=-10]{$α$};\draw (B)--(C)node[midway,xshift=-10]{$β$};\draw (C)--(D)node[midway,xshift=10]{$β$};
+%\draw (0,0.2)--(0.2,0.2)--(0.2,0);
+%\end{tikzpicture}
+%\end{center}
 \section*{Διατύπωση του προβλήματος}
-\begin{minipage}[b]{0.6\textwidth}Έστω ένας χαρταετός και $x$ και $y$ τα μήκη των διαγωνίων του. Αν είναι γνωστή η περίμετρος του χαρταετού, ποια είναι τα μήκη των διαγωνίων ώστε το εμβαδόν του να είναι μέγιστο;\end{minipage}
+\begin{minipage}[b]{0.6\textwidth}Έστω ένας τετράπλευρος χαρταετός με πλευρές $ΑΒ=ΑΔ$ και $ΒΓ=ΓΔ$ και $x$ και $y$ τα μήκη των διαγωνίων του, όπως φαίνεται στο σχήμα. Αν είναι γνωστή η περίμετρος του χαρταετού, ποια είναι τα μήκη των διαγωνίων ώστε το εμβαδόν του να είναι μέγιστο;\end{minipage}
 \begin{minipage}[m]{0.4\textwidth}\flushright
 	\begin{tikzpicture}[baseline=(current bounding box.west),thick,scale=0.8]
 	\node[above left] at (0,0) {O};
@@ -181,6 +185,7 @@ x&=2\sqrt{\dfrac{α^2β^2}{α^2+β^2}}=\dfrac{2αβ}{\sqrt{α^2+β^2}}
 	\node [above]at (0.5,5){$x$};
 	\end{tikzpicture}
 \end{center}
+Το εμβαδόν είναι μέγιστο για $x=\dfrac{2αβ}{\sqrt{α^2+β^2}}$
 \[\begin{split}
 y&=\sqrt{α^2-\left(\dfrac{x}{2}\right)^2 }+\sqrt{β^2-\left(\dfrac{x}{2}\right)^2 }=
 \sqrt{α^2-\left(\dfrac{2αβ}{2\sqrt{α^2+β^2}}\right)^2}+\sqrt{β^2-\left(\dfrac{2αβ}{2\sqrt{α^2+β^2}}\right)^2}\\&=
@@ -193,4 +198,8 @@ y&=\sqrt{α^2-\left(\dfrac{x}{2}\right)^2 }+\sqrt{β^2-\left(\dfrac{x}{2}\right)
 	\item $\mathbf{x=\dfrac{2αβ}{\sqrt{α^2+β^2}}}$
 	\item $\mathbf{y=\sqrt{α^2+β^2}}$
 \end{itemize}}
+
+Βρήκαμε τις βέλτιστες διαστάσεις για τις διαγωνίους. Υπάρχει όμως βέλτιστη επιλογή για το μήκος των πλευρών; Θα το δούμε στο δεύτερο μέρος.
+
+\textbf{Συνεχίζεται...}
 \end{document}
